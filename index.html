@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time Capsule - Seal Your Memories</title>
-    <!-- Google Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     
     <style>
-        /* ==================== GLOBAL STYLES ==================== */
+        
         * {
             margin: 0;
             padding: 0;
@@ -27,8 +27,7 @@
             position: relative;
         }
 
-        /* Ambient Cosmic Background Blobs */
-        /* ==================== NEW IMAGE BACKGROUND ==================== */
+        
 .background-glow {
     position: fixed;
     inset: 0;
@@ -36,14 +35,14 @@
     overflow: hidden;
     pointer-events: none;
     
-    /* Target your custom background image */
+   
     background-image: linear-gradient(rgba(11, 11, 20, 0.8), rgba(11, 11, 20, 0.85)), url('image.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-        /* ==================== HEADER / NAVBAR ==================== */
+        
         header {
             width: 100%;
             padding: 20px 8%;
@@ -118,7 +117,7 @@
             box-shadow: 0 8px 25px rgba(0, 242, 254, 0.5);
         }
 
-        /* ==================== HERO SECTION ==================== */
+        
         .hero {
             min-height: 100vh;
             display: flex;
@@ -177,8 +176,7 @@
             font-size: 1.1rem;
             font-weight: 600;
         }
-
-        /* ==================== ABOUT SECTION ==================== */
+/
         .about-section {
             padding: 100px 8%;
             background: rgba(255, 255, 255, 0.02);
@@ -213,7 +211,7 @@
             margin: 0 auto;
         }
 
-        /* Glassmorphism Cards */
+       
         .card {
             background: rgba(30, 30, 47, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -280,7 +278,6 @@
             line-height: 1.6;
         }
 
-        /* ==================== FOOTER ==================== */
         footer {
             padding: 40px 8%;
             text-align: center;
@@ -289,14 +286,12 @@
             border-top: 1px solid rgba(255, 255, 255, 0.02);
         }
 
-        /* ==================== ANIMATIONS ==================== */
         @keyframes pulseHourglass {
             0% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 2px rgba(0, 242, 254, 0.4)); }
             50% { transform: scale(1.1); filter: drop-shadow(0 0 12px rgba(0, 242, 254, 0.8)); }
             100% { transform: scale(1) rotate(180deg); filter: drop-shadow(0 0 2px rgba(0, 242, 254, 0.4)); }
         }
 
-        /* Responsive UI Adjustments */
         @media (max-width: 768px) {
             header { padding: 15px 5%; }
             .hero h1 { font-size: 2.5rem; }
@@ -308,14 +303,14 @@
 </head>
 <body>
 
-    <!-- Ambient Ambient Blur Blobs -->
+    
     <div class="background-glow">
         <div class="blob blob-purple"></div>
         <div class="blob blob-cyan"></div>
         <div class="blob blob-pink"></div>
     </div>
 
-    <!-- Navigation Bar -->
+   
     <header>
         <a href="#" class="logo">
             <i class="fa-solid fa-hourglass-half"></i>
@@ -329,7 +324,6 @@
         </div>
     </header>
 
-    <!-- Hero Showcase Section -->
     <section class="hero">
         <div class="badge">✨ Secure Digital Preservation</div>
         <h1>Every Memory Deserves A <span>Future</span></h1>
@@ -339,8 +333,6 @@
             <a href="#about" class="btn btn-login btn-large" style="border-color: rgba(255,255,255,0.1)">Learn More</a>
         </div>
     </section>
-
-    <!-- About / Informational Features Section -->
     <section id="about" class="about-section">
         <div class="section-header">
             <h2>How It Works</h2>
@@ -348,7 +340,7 @@
         </div>
 
         <div class="grid-container">
-            <!-- Card 1 -->
+            
             <div class="card">
                 <div class="card-icon">
                     <i class="fa-solid fa-pen-fancy"></i>
@@ -357,7 +349,6 @@
                 <p>Compose letters to your future self, friends, or family. Attach rich photo libraries, home videos, audio voice memos, or secure document files.</p>
             </div>
 
-            <!-- Card 2 -->
             <div class="card">
                 <div class="card-icon">
                     <i class="fa-solid fa-lock"></i>
@@ -366,7 +357,7 @@
                 <p>Pick a definitive future point in time. Your vault's smart contract metadata locks down automatically, calculation-ready against live server arrays.</p>
             </div>
 
-            <!-- Card 3 -->
+            
             <div class="card">
                 <div class="card-icon">
                     <i class="fa-solid fa-clock-rotate-left"></i>
@@ -377,7 +368,6 @@
         </div>
     </section>
 
-    <!-- Minimal Clean Footer Footer -->
     <footer>
         <p>&copy; 2026 Time Capsule App. All memories protected under absolute local storage protocols.</p>
     </footer>
