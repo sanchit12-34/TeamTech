@@ -438,7 +438,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 // =====================================
 // PROFILE DROPDOWN
-// =====================================
+//=
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -464,5 +464,185 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     }
+
+});
+
+// =====================================
+// THEME TOGGLE
+// =====================================
+
+const themeBtn = document.querySelector(".theme-btn");
+
+if (themeBtn) {
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "light") {
+        document.body.classList.add("light-mode");
+        themeBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+    }
+
+    themeBtn.addEventListener("click", () => {
+
+        document.body.classList.toggle("light-mode");
+
+        if (document.body.classList.contains("light-mode")) {
+            localStorage.setItem("theme", "light");
+            themeBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+        } else {
+            localStorage.setItem("theme", "dark");
+            themeBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+        }
+
+    });
+
+}
+
+
+
+
+// ================= PROFILE SYSTEM =================
+
+
+const profileButton =
+document.querySelector(".profile");
+
+
+const profileModal =
+document.getElementById("profileModal");
+
+
+const closeProfile =
+document.getElementById("closeProfile");
+
+
+
+// OPEN PROFILE
+
+profileButton.addEventListener("click", function(){
+
+    profileModal.classList.add("show");
+
+    loadProfile();
+
+});
+
+
+
+// CLOSE USING X BUTTON
+
+closeProfile.addEventListener("click", function(){
+
+    profileModal.classList.remove("show");
+
+});
+
+
+
+// CLOSE WHEN CLICK OUTSIDE
+
+profileModal.addEventListener("click", function(e){
+
+
+    if(e.target === profileModal){
+
+        profileModal.classList.remove("show");
+
+    }
+
+
+});
+
+
+
+// LOAD USER DATA
+
+function loadProfile(){
+
+
+    let user =
+    JSON.parse(localStorage.getItem("currentUser"));
+
+
+
+    if(user){
+
+
+        document.getElementById("profileName").innerText =
+        user.name;
+
+
+        document.getElementById("profileEmail").innerText =
+        user.email;
+
+
+    }
+
+
+
+    let capsules =
+    JSON.parse(localStorage.getItem("capsules")) || [];
+
+
+
+    let locked = 0;
+
+    let opened = 0;
+
+
+
+    capsules.forEach(function(capsule){
+
+
+        let date =
+        new Date(capsule.unlockDate);
+
+
+
+        if(date <= new Date()){
+
+            opened++;
+
+        }
+        else{
+
+            locked++;
+
+        }
+
+
+    });
+
+
+
+    document.getElementById("profileTotal").innerText =
+    capsules.length;
+
+
+    document.getElementById("profileLocked").innerText =
+    locked;
+
+
+    document.getElementById("profileOpened").innerText =
+    opened;
+
+
+}
+
+
+
+// LOGOUT
+
+document
+.getElementById("profileLogout")
+.addEventListener("click",function(){
+
+
+    localStorage.removeItem("currentUser");
+
+
+    window.location.href="login.html";
+
 
 });
