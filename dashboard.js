@@ -436,3 +436,33 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+// =====================================
+// PROFILE DROPDOWN
+// =====================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const profileToggle = document.querySelector(".profile-toggle");
+    const profileMenu = document.querySelector(".profile-menu");
+
+
+    if (profileToggle && profileMenu) {
+
+        profileToggle.addEventListener("click", function (event) {
+
+            event.stopPropagation();
+
+            profileMenu.classList.toggle("active");
+
+        });
+
+
+        document.addEventListener("click", function () {
+
+            profileMenu.classList.remove("active");
+
+        });
+
+    }
+
+});
