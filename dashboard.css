@@ -764,11 +764,6 @@ nav {
   * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
   html { scroll-behavior: auto; }
 }
-footer {
-  text-align: center;
-  padding: 20px; /* Optional: adds some breathing room */
-  background-color: #f8f9fa; /* Optional: adds a light background */
-}
 /* =====================================
    LIGHT MODE
 ===================================== */
