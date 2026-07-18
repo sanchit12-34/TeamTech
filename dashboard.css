@@ -1,6 +1,6 @@
-* =============================================================
+/* =============================================================
    TIME CAPSULE — "Vault of Ink"
-  / Ink-navy archive, brass wax-seal accents, parchment paper cues.
+   Ink-navy archive, brass wax-seal accents, parchment paper cues.
    Same structure/IDs/classes as the original — visuals only.
    ============================================================= */
 
@@ -239,94 +239,7 @@ nav {
   color: var(--parchment);
   font-size: 0.95rem;
 }
-/* =============================================================
-   PROFILE DROPDOWN
-   ============================================================= */
 
-.profile-dropdown {
-  position: relative;
-}
-
-.profile-toggle {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 9px 14px;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  background: var(--panel);
-  color: var(--parchment);
-  font-size: 0.85rem;
-  transition: all 0.25s ease;
-}
-
-.profile-toggle:hover {
-  border-color: var(--line-strong);
-  background: rgba(201, 161, 90, 0.12);
-  color: var(--brass-bright);
-}
-
-.profile-toggle i:last-child {
-  font-size: 0.7rem;
-}
-
-
-/* Dropdown box */
-
-.profile-menu {
-  position: absolute;
-  top: 50px;
-  right: 0;
-  width: 190px;
-  background: var(--panel);
-  border: 1px solid var(--line-strong);
-  border-radius: 14px;
-  padding: 10px 0;
-  box-shadow: var(--shadow-deep);
-
-  display: none;
-  z-index: 1000;
-}
-
-
-/* Show dropdown */
-
-.profile-menu.active {
-  display: block;
-}
-
-
-/* Dropdown links */
-
-.profile-menu a {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 18px;
-  text-decoration: none;
-  color: var(--parchment-dim);
-  font-size: 0.85rem;
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-
-.profile-menu a i {
-  width: 18px;
-  color: var(--brass);
-}
-
-
-.profile-menu a:hover {
-  background: rgba(201, 161, 90, 0.12);
-  color: var(--brass-bright);
-}
-
-
-.profile-menu hr {
-  border: none;
-  border-top: 1px solid var(--line);
-  margin: 8px 0;
-}
 #logoutBtn {
   padding: 8px 18px;
   border-radius: 999px;
@@ -842,37 +755,12 @@ nav {
   .profile span#welcomeUser { display: none; }
   #capsuleContainer { grid-template-columns: 1fr; }
 }
-/* =====================================
-   LIGHT MODE VARIABLE SWITCH
-===================================== */
 
-body.light-mode {
+/* =============================================================
+   REDUCED MOTION
+   ============================================================= */
 
-    --ink-navy: #f5f5f5;
-    --ink-navy-deep: #ffffff;
-
-    --panel: #ffffff;
-    --panel-light: #fafafa;
-
-    --parchment: #222222;
-    --parchment-dim: #555555;
-    --parchment-faint: #777777;
-
-    --line: rgba(0,0,0,0.12);
-    --line-strong: rgba(0,0,0,0.25);
-
-    --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
-    --shadow-deep: 0 20px 50px rgba(0,0,0,0.15);
-}
-
-
-/* Remove dark overlay */
-body.light-mode::before {
-    background:#f5f5f5;
-}
-
-
-/* Disable dark floating blobs */
-body.light-mode .background {
-    opacity:0;
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  html { scroll-behavior: auto; }
 }
