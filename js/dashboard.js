@@ -1,4 +1,11 @@
+// =====================================
+// ADVANCED TIME CAPSULE
+// dashboard.js - Unified Production Script
+// =====================================
 
+// =====================================
+// GLOBAL APP STATE & SELECTORS
+// =====================================
 let uploadedFiles = [];
 let searchText = "";
 let currentFilter = "all";
@@ -429,6 +436,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
 // =====================================
 // THEME TOGGLE
 // =====================================
