@@ -12,7 +12,11 @@ let currentFilter = "all";
 let countdownInterval;
 
 // Load data safely
-let capsules = JSON.parse(localStorage.getItem("capsules")) || [];
+const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+const capsuleKey = `capsules_${currentUser.email}`;
+
+let capsules = JSON.parse(localStorage.getItem(capsuleKey)) || [];
 
 const capsuleForm = document.getElementById("capsuleForm");
 const capsuleContainer = document.getElementById("capsuleContainer");
@@ -69,9 +73,8 @@ if (capsuleForm) {
         showToast("✓ Capsule Created Successfully");
     });
 }
-
 function saveCapsules() {
-    localStorage.setItem("capsules", JSON.stringify(capsules));
+    localStorage.setItem(capsuleKey, JSON.stringify(capsules));
 }
 
 function getFiles() {
@@ -581,9 +584,11 @@ function loadProfile(){
 
 
 
-    let capsules =
-    JSON.parse(localStorage.getItem("capsules")) || [];
+    let user = JSON.parse(localStorage.getItem("currentUser"));
 
+const key = `capsules_${user.email}`;
+
+let capsules = JSON.parse(localStorage.getItem(key)) || [];
 
 
     let locked = 0;
