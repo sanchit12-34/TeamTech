@@ -81,7 +81,6 @@ if (capsuleForm) {
 function saveCapsules() {
     localStorage.setItem(capsuleKey, JSON.stringify(capsules));
 }
-}
 
 function getFiles() {
     let files = [];
@@ -499,23 +498,18 @@ document.getElementById("closeProfile");
 
 // OPEN PROFILE
 
-profileButton.addEventListener("click", function(){
+if (profileButton && profileModal && closeProfile) {
 
-    profileModal.classList.add("show");
+    profileButton.addEventListener("click", function () {
+        profileModal.classList.add("show");
+        loadProfile();
+    });
 
-    loadProfile();
+    closeProfile.addEventListener("click", function () {
+        profileModal.classList.remove("show");
+    });
 
-});
-
-
-
-// CLOSE USING X BUTTON
-
-closeProfile.addEventListener("click", function(){
-
-    profileModal.classList.remove("show");
-
-});
+}
 
 
 
