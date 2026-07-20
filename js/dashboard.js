@@ -69,7 +69,9 @@ if (capsuleForm) {
         }
 
         capsules.push(capsule);
+        console.log(capsules);
         saveCapsules();
+        console.log(localStorage.getItem(capsuleKey));
         capsuleForm.reset();
         
         displayCapsules();
