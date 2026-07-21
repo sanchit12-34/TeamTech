@@ -618,7 +618,27 @@ document
     localStorage.removeItem("currentUser");
 
 
-    window.location.href="login.html";
+    document.addEventListener("DOMContentLoaded", () => {
+
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    if (logoutBtn) {
+
+        logoutBtn.addEventListener("click", () => {
+
+            localStorage.removeItem("currentUser");
+
+            showToast("Logged out successfully 👋");
+
+            setTimeout(() => {
+                window.location.href = "login.html";
+            }, 800);
+
+        });
+
+    }
+
+});
 
 
 });
